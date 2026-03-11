@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "aidance-lab-app",
-    "slug": "aidance-lab-app",
+    "name": "AIDance Lab",
+    "slug": "aidance-lab",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -12,7 +12,13 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSCameraUsageDescription": "AIDance Lab uses the camera for follow-practice feedback.",
+        "NSPhotoLibraryUsageDescription": "AIDance Lab uses your videos for dance analysis.",
+        "NSPhotoLibraryAddUsageDescription": "AIDance Lab can save processed dance clips when requested."
+      },
+      "bundleIdentifier": "com.anonymous.aidance-lab"
     },
     "android": {
       "adaptiveIcon": {
@@ -25,6 +31,15 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      "expo-video",
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "AIDance Lab uses your videos for dance analysis."
+        }
+      ]
+    ]
   }
 }
